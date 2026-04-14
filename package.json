@@ -1,0 +1,32 @@
+{
+  "name": "cloud-ramp-sdk",
+  "version": "1.0.0",
+  "description": "SDK for creating WebAssembly code for Cloud Ramp",
+  "main": "index.js",
+  "files": [
+    "template/",
+    "scripts/"
+  ],
+  "keywords": ["wasm", "sdk", "cloud-ramp"],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "assemblyscript": "^0.28.9"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  },
+  "scripts": {
+    "asbuild:debug": "asc assembly/index.ts --target debug",
+    "asbuild:release": "asc assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:debug && npm run asbuild:release",
+    "test": "node tests",
+    "start": "npx serve .",
+    "postinstall": "node scripts/postinstall.ts",
+    "build": "node scripts/build.ts"
+  }
+}
