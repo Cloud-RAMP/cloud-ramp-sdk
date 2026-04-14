@@ -8,7 +8,7 @@
     "scripts/"
   ],
   "keywords": ["wasm", "sdk", "cloud-ramp"],
-  "author": "Your Name",
+  "author": "Peter Olsen",
   "license": "MIT",
   "devDependencies": {
     "assemblyscript": "^0.28.9"
