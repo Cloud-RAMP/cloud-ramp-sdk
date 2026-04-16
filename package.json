@@ -1,6 +1,6 @@
 {
   "name": "cloud-ramp-sdk",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "SDK for creating WebAssembly code for Cloud Ramp",
   "main": "index.js",
   "files": [
@@ -14,7 +14,7 @@
   ],
   "author": "Peter Olsen",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "assemblyscript": "^0.28.9"
   },
   "type": "module",
@@ -25,6 +25,6 @@
     }
   },
   "scripts": {
-    "postinstall": "node scripts/postinstall.ts"
+    "postinstall": "node scripts/postinstall.js"
   }
 }
