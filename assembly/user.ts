@@ -1,4 +1,4 @@
-import { WSEvent } from "./protocol";
+import { WSEvent } from "./sdk";
 
 export function onMessage(event: WSEvent): void {
 }

@@ -4,10 +4,14 @@
   "description": "SDK for creating WebAssembly code for Cloud Ramp",
   "main": "index.js",
   "files": [
-    "template/",
+    "assembly/",
     "scripts/"
   ],
-  "keywords": ["wasm", "sdk", "cloud-ramp"],
+  "keywords": [
+    "wasm",
+    "sdk",
+    "cloud-ramp"
+  ],
   "author": "Peter Olsen",
   "license": "MIT",
   "devDependencies": {
@@ -21,12 +25,6 @@
     }
   },
   "scripts": {
-    "asbuild:debug": "asc assembly/index.ts --target debug",
-    "asbuild:release": "asc assembly/index.ts --target release",
-    "asbuild": "npm run asbuild:debug && npm run asbuild:release",
-    "test": "node tests",
-    "start": "npx serve .",
-    "postinstall": "node scripts/postinstall.ts",
-    "build": "node scripts/build.ts"
+    "postinstall": "node scripts/postinstall.ts"
   }
 }
