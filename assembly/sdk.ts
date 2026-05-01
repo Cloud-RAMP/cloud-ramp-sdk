@@ -39,7 +39,7 @@ export class Context {
    */
   log(msg: string): Status {
     const errPtr = env._log(to_usize(msg), msg.length);
-    return get_status(errPtr);
+    return get_status(<u32>errPtr);
   }
 
   /**
@@ -63,8 +63,8 @@ export class Context {
    * @returns a status representing the success of the operation
    */
   serverMessage(recipient: string, message: string): Status {
-    const errPtr = env._sendMessage(to_usize(recipient), recipient.length, to_usize(message), message.length);
-    return get_status(errPtr);
+    const errPtr = env._serverMessage(to_usize(recipient), recipient.length, to_usize(message), message.length);
+    return get_status(<u32>errPtr);
   }
 }
 
@@ -81,7 +81,7 @@ class Store {
    */
   set(key: string, value: string): Status {
     const errPtr = env._set(to_usize(key), key.length, to_usize(value), value.length);
-    return get_status(errPtr);
+    return get_status(<u32>errPtr);
   }
 
   /**
@@ -117,7 +117,7 @@ class DB {
    */
   set(key: string, value: string): Status {
     const errPtr = env._dbSet(to_usize(key), key.length, to_usize(value), value.length);
-    return get_status(errPtr);
+    return get_status(<u32>errPtr);
   }
 
   /**
@@ -152,7 +152,7 @@ class Room {
    */
   broadcast(msg: string): Status {
     const errPtr = env._broadcast(to_usize(msg), msg.length);
-    return get_status(errPtr);
+    return get_status(<u32>errPtr);
   }
 
   /**
@@ -178,7 +178,7 @@ class Room {
    */
   sendMessage(recipient: string, message: string): Status {
     const errPtr = env._sendMessage(to_usize(recipient), recipient.length, to_usize(message), message.length);
-    return get_status(errPtr);
+    return get_status(<u32>errPtr);
   }
 
   /**
@@ -189,7 +189,7 @@ class Room {
    */
   closeConnection(target: string): Status {
     const errPtr = env._closeConnection(to_usize(target), target.length);
-    return get_status(errPtr);
+    return get_status(<u32>errPtr);
   }
 }
 
